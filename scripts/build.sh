@@ -14,8 +14,8 @@ show_usage() {
 
 single_compile() {
     local filename=$1
-    mkdir -p build
-    cp -r $CONTENT_DIR build/
+    mkdir -p build/contents
+    # cp -r $CONTENT_DIR build/
     xelatex -synctex=1 -interaction=nonstopmode -file-line-error -output-directory=build "$filename" || exit 1
     echo "Single compilation completed successfully!"
 }
